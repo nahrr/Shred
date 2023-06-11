@@ -1,0 +1,70 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33414.496
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{3566363E-4B79-4C2A-9E20-51754E5AC80E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shred.App", "Shred.App\Shred.App.csproj", "{ACBAED8D-4B88-4CF5-BAE3-DD9F2508C842}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shred.Application", "Shred.Application\Shred.Application.csproj", "{528203E2-4A19-4807-9E5A-2E4A3E51FBEF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shred.Domain", "Shred.Domain\Shred.Domain.csproj", "{D8E67937-EDF1-4F5B-A740-9A6CDEFEC6D6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shred.Infrastructure", "Shred.Infrastructure\Shred.Infrastructure.csproj", "{2C14667D-CC1D-4BAE-88D7-57D9F93E2127}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shred.Persistence", "Shred.Persistence\Shred.Persistence.csproj", "{ABBE279B-F7D9-4765-B9AC-49418B969E11}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shred.Presentation", "Shred.Presentation\Shred.Presentation.csproj", "{12CA1EE0-DF54-4AE3-8351-98EECBDCC7BB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sql", "sql", "{4516811D-9295-42CF-8FFC-10D00C2D64C1}"
+	ProjectSection(SolutionItems) = preProject
+		createDb.sql = createDb.sql
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ACBAED8D-4B88-4CF5-BAE3-DD9F2508C842}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACBAED8D-4B88-4CF5-BAE3-DD9F2508C842}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACBAED8D-4B88-4CF5-BAE3-DD9F2508C842}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACBAED8D-4B88-4CF5-BAE3-DD9F2508C842}.Release|Any CPU.Build.0 = Release|Any CPU
+		{528203E2-4A19-4807-9E5A-2E4A3E51FBEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{528203E2-4A19-4807-9E5A-2E4A3E51FBEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{528203E2-4A19-4807-9E5A-2E4A3E51FBEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{528203E2-4A19-4807-9E5A-2E4A3E51FBEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8E67937-EDF1-4F5B-A740-9A6CDEFEC6D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8E67937-EDF1-4F5B-A740-9A6CDEFEC6D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8E67937-EDF1-4F5B-A740-9A6CDEFEC6D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8E67937-EDF1-4F5B-A740-9A6CDEFEC6D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C14667D-CC1D-4BAE-88D7-57D9F93E2127}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C14667D-CC1D-4BAE-88D7-57D9F93E2127}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C14667D-CC1D-4BAE-88D7-57D9F93E2127}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C14667D-CC1D-4BAE-88D7-57D9F93E2127}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABBE279B-F7D9-4765-B9AC-49418B969E11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABBE279B-F7D9-4765-B9AC-49418B969E11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABBE279B-F7D9-4765-B9AC-49418B969E11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABBE279B-F7D9-4765-B9AC-49418B969E11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12CA1EE0-DF54-4AE3-8351-98EECBDCC7BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12CA1EE0-DF54-4AE3-8351-98EECBDCC7BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12CA1EE0-DF54-4AE3-8351-98EECBDCC7BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12CA1EE0-DF54-4AE3-8351-98EECBDCC7BB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{ACBAED8D-4B88-4CF5-BAE3-DD9F2508C842} = {3566363E-4B79-4C2A-9E20-51754E5AC80E}
+		{528203E2-4A19-4807-9E5A-2E4A3E51FBEF} = {3566363E-4B79-4C2A-9E20-51754E5AC80E}
+		{D8E67937-EDF1-4F5B-A740-9A6CDEFEC6D6} = {3566363E-4B79-4C2A-9E20-51754E5AC80E}
+		{2C14667D-CC1D-4BAE-88D7-57D9F93E2127} = {3566363E-4B79-4C2A-9E20-51754E5AC80E}
+		{ABBE279B-F7D9-4765-B9AC-49418B969E11} = {3566363E-4B79-4C2A-9E20-51754E5AC80E}
+		{12CA1EE0-DF54-4AE3-8351-98EECBDCC7BB} = {3566363E-4B79-4C2A-9E20-51754E5AC80E}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2053FD32-FF03-4313-B476-02AE78B33941}
+	EndGlobalSection
+EndGlobal
