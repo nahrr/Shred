@@ -10,7 +10,7 @@ builder.Services.AddPersistence(builder.Configuration);
 builder.Services.AddPresentation();
 builder.Services.AddTransient<ExceptionMiddleware>();
 
-builder.Services.AddCors(options =>
+builder.Services.AddCors(options => //TODO
 {
     options.AddPolicy("AllowAnyOrigin",
         builder => builder
@@ -35,6 +35,6 @@ app.MapControllers();
 
 app.UseMiddleware<ExceptionMiddleware>();
 
-app.UseCors("AllowAnyOrigin");
+app.UseCors("AllowAnyOrigin"); // TODO
 
 app.Run();
