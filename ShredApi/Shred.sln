@@ -17,9 +17,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shred.Persistence", "Shred.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shred.Presentation", "Shred.Presentation\Shred.Presentation.csproj", "{12CA1EE0-DF54-4AE3-8351-98EECBDCC7BB}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sql", "sql", "{4516811D-9295-42CF-8FFC-10D00C2D64C1}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7F72A7B3-0F3D-4881-AB7A-BD5DFF3C6D9C}"
 	ProjectSection(SolutionItems) = preProject
-		createDb.sql = createDb.sql
+		.gitignore = .gitignore
+		Readme.md = Readme.md
 	EndProjectSection
 EndProject
 Global

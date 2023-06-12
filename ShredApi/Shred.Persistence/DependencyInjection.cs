@@ -13,11 +13,11 @@ public static class DependencyInjection
         IConfiguration configuration)
     {
         //TODO: fix cs
-        services.AddDbContext<ApplicationDbContext>(options =>
-            options.UseSqlServer(@"Server=.\SQLExpress;Database=Shred;Integrated Security=true;Trusted_Connection=Yes;TrustServerCertificate=True"));
+        services.AddDbContext<ApplicationDbContext>(options => {
+            options.UseSqlServer(configuration["DatabaseConnectionString"]);
+        });
 
-        services.AddScoped<IUnitOfWork>(sp =>
-                   sp.GetRequiredService<ApplicationDbContext>());
+        services.AddScoped<IUnitOfWork>(sp => sp.GetRequiredService<ApplicationDbContext>());
 
         services.AddScoped<IWorkoutRepository, WorkoutRepository>();
 
