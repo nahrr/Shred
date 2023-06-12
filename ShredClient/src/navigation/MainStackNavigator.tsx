@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { createStackNavigator } from "@react-navigation/stack";
-import WorkoutsScreen from "../screens/WorkoutsScreen";
+import TabNavigator from "./TabNavigator";
+import DetailsScreen from "../screens/DetailsScreen";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { View, Text, FlatList, StyleSheet } from "react-native";
+import ThemeContext from "../context/ThemeContext";
 
 export type MainStackParamList = {
   Workouts: undefined;
@@ -10,19 +14,30 @@ export type MainStackParamList = {
 const Stack = createStackNavigator<MainStackParamList>();
 
 const MainStackNavigator = () => {
+  const { theme } = useContext(ThemeContext);
+
+  const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: theme === "dark" ? "#222" : "#F5F5F5",
+    },
+  });
+
   return (
-    <Stack.Navigator initialRouteName="Workouts">
-      <Stack.Screen
-        name="Workouts"
-        component={WorkoutsScreen}
-        options={{ title: "My Workouts" }}
-      />
-      {/* <Stack.Screen
-        name="Details"
-        component={DetailsScreen}
-        options={{ title: "Workout Details" }}
-      /> */}
-    </Stack.Navigator>
+    <SafeAreaView style={styles.container}>
+      <Stack.Navigator initialRouteName="Workouts">
+        <Stack.Screen
+          name="Workouts"
+          component={TabNavigator}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Details"
+          component={DetailsScreen}
+          options={{ headerShown: false }}
+        />
+      </Stack.Navigator>
+    </SafeAreaView>
   );
 };
 
