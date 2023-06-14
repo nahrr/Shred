@@ -86,36 +86,4 @@ const WorkoutsScreen = () => {
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 20,
-    backgroundColor: "white",
-  },
-  workoutName: {
-    fontSize: 24,
-    marginBottom: 8,
-  },
-  workoutDate: {
-    fontSize: 16,
-    marginBottom: 8,
-  },
-  workoutStatus: {
-    fontSize: 14,
-    marginBottom: 16,
-    color: "gray",
-  },
-  exerciseContainer: {
-    padding: 10,
-    borderBottomWidth: 1,
-    borderBottomColor: "#eee",
-  },
-  exerciseName: {
-    fontSize: 18,
-  },
-  setContainer: {
-    paddingLeft: 20,
-    paddingVertical: 5,
-  },
-});
 export default WorkoutsScreen;

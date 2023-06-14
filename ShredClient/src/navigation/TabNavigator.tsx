@@ -2,13 +2,15 @@ import React, { useContext } from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Icon from "react-native-vector-icons/Ionicons";
 import WorkoutsScreen from "../screens/WorkoutsScreen";
-import DetailsScreen from "../screens/DetailsScreen";
+import ProfileScreen from "../screens/ProfileScreen";
 import ThemeContext from "../context/ThemeContext";
-import { StyleSheet, Text, View } from "react-native";
+import { Text, View } from "react-native";
+import CreateWorkoutScreen from "../screens/CreateWorkoutScreen";
 
 type TabNavigatorParamsList = {
   WorkoutsScreen: undefined;
-  DetailsScreen: undefined;
+  ProfileScreen: undefined;
+  CreateWorkoutScreen: undefined;
 };
 
 const Tab = createBottomTabNavigator<TabNavigatorParamsList>();
@@ -16,11 +18,48 @@ const Tab = createBottomTabNavigator<TabNavigatorParamsList>();
 const TabNavigator = () => {
   const { theme } = useContext(ThemeContext);
 
-  const styles = StyleSheet.create({
-    container: {
-      backgroundColor: theme === "dark" ? "#222" : "#F5F5F5",
-    },
-  });
+  const getTabBarLabel = (
+    focused: boolean,
+    color: string,
+    name: string
+  ): React.ReactNode | null => {
+    return focused ? (
+      <Text
+        style={{
+          fontSize: 12,
+          fontWeight: "bold",
+          textAlign: "center",
+          padding: 0,
+          color,
+        }}
+      >
+        {name}
+      </Text>
+    ) : null;
+  };
+
+  const getTabBarIcon = (
+    focused: boolean,
+    color: string,
+    size: number,
+    iconName: string
+  ) => {
+    return (
+      <View
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          marginBottom: -5,
+        }}
+      >
+        <Icon
+          name={focused ? `${iconName}` : `${iconName}-outline`}
+          size={size}
+          color={color}
+        />
+      </View>
+    );
+  };
 
   return (
     <Tab.Navigator
@@ -33,52 +72,42 @@ const TabNavigator = () => {
         component={WorkoutsScreen}
         options={{
           headerShown: false,
-          
-          tabBarLabel: ({ focused, color }) =>
-            focused ? (
-              <Text
-                style={{
-                  fontSize: 12,
-                  fontWeight: "bold",
-                  textAlign: "center",
-                  padding: 0,
-                  color,
-                }}
-              >
-                Workouts
-              </Text>
-            ) : null,
 
-          tabBarIcon: ({ focused, color, size }) => (
-            <View
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                marginBottom: -5,
-              }}
-            >
-              <Icon
-                name={focused ? "barbell" : "barbell-outline"}
-                size={size}
-                color={color}
-              />
-            </View>
-          ),
+          tabBarLabel: ({ focused, color }) =>
+            getTabBarLabel(focused, color, "Home"),
+
+          tabBarIcon: ({ focused, color, size }) =>
+            getTabBarIcon(focused, color, size, "home"),
           tabBarActiveTintColor: "white",
           tabBarInactiveTintColor: "gray",
         }}
       />
 
       <Tab.Screen
-        name="DetailsScreen"
-        component={DetailsScreen}
+        name="CreateWorkoutScreen"
+        component={CreateWorkoutScreen}
         options={{
           headerShown: false,
-          tabBarLabel: ({ focused }) => (focused ? <Text>Home</Text> : null),
-          tabBarIcon: ({ focused, color, size }) => {
-            const iconName = focused ? "home" : "home-outline";
-            return <Icon name={iconName} size={size} color={color} />;
-          },
+          tabBarLabel: ({ focused, color }) =>
+            getTabBarLabel(focused, color, "Workout"),
+          tabBarIcon: ({ focused, color, size }) =>
+            getTabBarIcon(focused, color, size, "barbell"),
+
+          tabBarActiveTintColor: "white",
+          tabBarInactiveTintColor: "gray",
+        }}
+      />
+
+      <Tab.Screen
+        name="ProfileScreen"
+        component={ProfileScreen}
+        options={{
+          headerShown: false,
+          tabBarLabel: ({ focused, color }) =>
+            getTabBarLabel(focused, color, "Profile"),
+          tabBarIcon: ({ focused, color, size }) =>
+            getTabBarIcon(focused, color, size, "person-circle"),
+
           tabBarActiveTintColor: "white",
           tabBarInactiveTintColor: "gray",
         }}
