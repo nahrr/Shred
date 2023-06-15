@@ -1,16 +1,20 @@
 import React, { useContext } from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import TabNavigator from "./TabNavigator";
-import DetailsScreen from "../screens/ProfileScreen";
+import ProfileScreen from "../screens/ProfileScreen";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { View, Text, FlatList, StyleSheet } from "react-native";
+import { StyleSheet } from "react-native";
 import ThemeContext from "../context/ThemeContext";
 import CreateWorkoutScreen from "../screens/CreateWorkoutScreen";
+import WorkoutScreen from "../screens/WorkoutScreen";
+import AddExerciseScreen from "../screens/AddExerciseScreen";
 
 export type MainStackParamList = {
   Workouts: undefined;
-  Details: { workoutId: number };
-  Create: undefined;
+  Profile: undefined;
+  CreateWorkout: undefined;
+  Workout: undefined;
+  AddExercise: undefined;
 };
 
 const Stack = createStackNavigator<MainStackParamList>();
@@ -34,13 +38,25 @@ const MainStackNavigator = () => {
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="Create"
-          component={CreateWorkoutScreen}
+          name="Workout"
+          component={WorkoutScreen}
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="Details"
-          component={DetailsScreen}
+          name="Profile"
+          component={ProfileScreen}
+          options={{ headerShown: false }}
+        />
+
+        <Stack.Screen
+          name="CreateWorkout"
+          component={CreateWorkoutScreen}
+          options={{ headerShown: false }}
+        />
+
+        <Stack.Screen
+          name="AddExercise"
+          component={AddExerciseScreen}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>

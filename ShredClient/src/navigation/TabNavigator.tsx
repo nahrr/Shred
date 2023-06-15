@@ -5,12 +5,12 @@ import WorkoutsScreen from "../screens/WorkoutsScreen";
 import ProfileScreen from "../screens/ProfileScreen";
 import ThemeContext from "../context/ThemeContext";
 import { Text, View } from "react-native";
-import CreateWorkoutScreen from "../screens/CreateWorkoutScreen";
+import WorkoutScreen from "../screens/WorkoutScreen";
 
 type TabNavigatorParamsList = {
   WorkoutsScreen: undefined;
   ProfileScreen: undefined;
-  CreateWorkoutScreen: undefined;
+  WorkoutScreen: undefined;
 };
 
 const Tab = createBottomTabNavigator<TabNavigatorParamsList>();
@@ -84,8 +84,8 @@ const TabNavigator = () => {
       />
 
       <Tab.Screen
-        name="CreateWorkoutScreen"
-        component={CreateWorkoutScreen}
+        name="WorkoutScreen"
+        component={WorkoutScreen}
         options={{
           headerShown: false,
           tabBarLabel: ({ focused, color }) =>

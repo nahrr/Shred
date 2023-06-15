@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <Folder Include="Common\" />
+    <Folder Include="Exercises\Commands\" />
   </ItemGroup>
 
 </Project>
