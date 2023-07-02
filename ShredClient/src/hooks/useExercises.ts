@@ -1,9 +1,8 @@
-import { useQuery } from "react-query";
+import { UseQueryResult, useQuery } from "react-query";
+import { ExerciseResponse } from "../types/ExerciseResponse";
 
-const fetchWorkouts = async (): Promise<any> => {
-  const res = await fetch(
-    "http://192.168.0.105:5000/api/workout/03b84690-fb57-454a-affc-af9a49d6b73f"
-  );
+const fetchExercises = async (): Promise<ExerciseResponse[]> => {
+  const res = await fetch("http://192.168.0.105:5000/api/exercise?take=400");
 
   if (!res.ok) {
     throw new Error("Network response was not ok");
@@ -12,8 +11,8 @@ const fetchWorkouts = async (): Promise<any> => {
   return res.json();
 };
 
-const useWorkouts = () => {
-  return useQuery("workouts", fetchWorkouts);
+const useExercises = (): UseQueryResult<ExerciseResponse[], unknown> => {
+  return useQuery("exercices", fetchExercises);
 };
 
-export default useWorkouts;
+export default useExercises;

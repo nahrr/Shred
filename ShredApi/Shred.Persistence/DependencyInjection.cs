@@ -23,6 +23,8 @@ public static class DependencyInjection
 
         services.AddScoped<IExerciseRepository, ExerciseRepository>();
 
+        services.AddScoped<IUserExerciseRepository, UserExerciseRepository>();
+
         return services;
     }
 }

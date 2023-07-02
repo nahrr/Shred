@@ -16,11 +16,18 @@ internal class ExerciseConfiguration : IEntityTypeConfiguration<Exercise>
             .IsRequired()
             .HasMaxLength(150);
 
+        builder.Property(x => x.HasVideo)
+            .IsRequired();
+
+        builder.Property(x => x.MediaPath)
+            .IsRequired()
+            .HasMaxLength(150);
+
         builder.HasIndex(x => x.Name)
           .IsUnique();
 
-        builder.HasOne<Muscle>()
-                .WithMany()
-                .HasForeignKey(x => x.MuscleId);
+        builder.HasOne(x => x.MuscleGroup)
+                .WithMany(x => x.Exercises)
+                .HasForeignKey(x => x.MuscleGroupId);
     }
 }

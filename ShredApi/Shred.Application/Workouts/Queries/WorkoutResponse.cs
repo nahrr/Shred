@@ -5,4 +5,4 @@ public sealed record WorkoutResponse(
     string Name,
     DateTimeOffset Date,
     bool IsCompleted,
-    IReadOnlyCollection<ExerciseResponse> Exercises);
+    IReadOnlyCollection<WorkoutExerciseResponse> Exercises);

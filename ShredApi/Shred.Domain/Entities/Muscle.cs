@@ -1,8 +1,8 @@
 ﻿namespace Shred.Domain.Entities
 {
-    public sealed class Muscle
+    public sealed class MuscleGroup
     {
-        public Muscle(
+        public MuscleGroup(
             Guid id,
             string name)
         {
@@ -10,9 +10,11 @@
             Name = name;
         }
 
-        private Muscle() { }
+        private MuscleGroup() { }
 
         public Guid Id { get; private set; }
         public string Name { get; private set; } = string.Empty;
+
+        public IReadOnlyCollection<Exercise> Exercises { get; set; } = null!;
     }
 }

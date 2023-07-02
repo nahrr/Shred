@@ -1,4 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using Shred.Application.Services;
+using Shred.Domain.Repositories;
 
 namespace Shred.Application;
 
@@ -10,6 +12,8 @@ public static class DependencyInjection
         {
             cfg.RegisterServicesFromAssembly(typeof(AssemblyReference).Assembly);
         });
+
+        services.AddScoped<IExerciseMediaUrlService, ExerciseMediaUrlService>();
 
         return services;
     }

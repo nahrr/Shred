@@ -4,11 +4,11 @@ using Shred.Domain.Entities;
 
 namespace Shred.Persistence.Configuration;
 
-internal class MuscleConfiguration : IEntityTypeConfiguration<Muscle>
+internal class MuscleGroupConfiguration : IEntityTypeConfiguration<MuscleGroup>
 {
-    public void Configure(EntityTypeBuilder<Muscle> builder)
+    public void Configure(EntityTypeBuilder<MuscleGroup> builder)
     {
-        builder.ToTable("Muscle");
+        builder.ToTable("MuscleGroup");
 
         builder.HasKey(x => x.Id);
 

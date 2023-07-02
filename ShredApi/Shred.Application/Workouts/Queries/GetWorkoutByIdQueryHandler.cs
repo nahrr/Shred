@@ -32,7 +32,7 @@ internal sealed class GetWorkoutByIdQueryHandler : IRequestHandler<GetWorkoutByI
             workout.IsCompleted,
             workout
                 .UserExercises
-                .Select(x => new ExerciseResponse(
+                .Select(x => new WorkoutExerciseResponse(
                     x.Exercise.Id,
                     x.Exercise.Name,
                     x.Sets

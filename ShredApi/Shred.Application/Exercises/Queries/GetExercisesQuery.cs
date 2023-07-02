@@ -3,5 +3,5 @@ using Shred.Domain.Shared;
 
 namespace Shred.Application.Exercises.Queries;
 
-public sealed record GetExercisesQuery() : IRequest<Result<IEnumerable<ExerciseResponse>>>;
+public sealed record GetExercisesQuery(int Take, int? Skip) : IRequest<Result<IEnumerable<ExerciseResponse>>>;
 

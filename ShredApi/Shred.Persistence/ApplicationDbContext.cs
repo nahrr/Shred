@@ -24,4 +24,5 @@ public sealed class ApplicationDbContext : DbContext, IUnitOfWork
     public DbSet<Exercise> Exercises { get; set; }
     public DbSet<User> Users { get; set; }
     public DbSet<Set> Sets { get; set; }
+    public DbSet<MuscleGroup> MuscleGroups { get; set; }
 }

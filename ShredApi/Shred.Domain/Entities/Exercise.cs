@@ -5,13 +5,15 @@ public sealed class Exercise
     public Exercise(
        Guid id,
        string name,
-       Guid muscleId,
-       string instructions)
+       Guid muscleGroupId,
+       string mediaPath,
+       bool hasVideo)
     {
         Id = id;
         Name = name;
-        MuscleId = muscleId;
-        Instructions = instructions;
+        MuscleGroupId = muscleGroupId;
+        MediaPath = mediaPath;
+        HasVideo = hasVideo;
     }
 
     // Parameterless constructor for Entity Framework
@@ -19,24 +21,13 @@ public sealed class Exercise
 
     public Guid Id { get; private set; }
     public string Name { get; private set; } = string.Empty;
-    public Guid MuscleId { get; private set; }
-    public string Instructions { get; private set; } = string.Empty;
+    public Guid MuscleGroupId { get; private set; }
+    public string MediaPath { get; private set; } = string.Empty;
+    public bool HasVideo { get; private set; }
+
 
     // Navigation properties
     public IReadOnlyCollection<UserExercise> UserExercises { get; private set; } = null!;
 
-    public static Exercise Create(
-        Guid id,
-        string name,
-        Guid muscleId,
-        string instructions)
-    {
-        var exercise = new Exercise(
-            id,
-            name,
-            muscleId,
-            instructions);
-
-        return exercise;
-    }
+    public MuscleGroup MuscleGroup { get; private set; } = null!;
 }
