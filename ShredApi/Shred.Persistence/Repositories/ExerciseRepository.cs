@@ -24,9 +24,9 @@ public sealed class ExerciseRepository : IExerciseRepository
         CancellationToken cancellationToken = default)
     {
         return await _context.Exercises
-            //.OrderBy(e => e.Id)
-            //.Skip(skip ?? 0)
-            //.Take(take)
+            .OrderBy(e => e.Id)
+            .Skip(skip ?? 0)
+            .Take(take)
             .Include(x => x.MuscleGroup)
             .ToListAsync(cancellationToken);
     }
