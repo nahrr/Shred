@@ -1,14 +1,14 @@
 import React, { useContext } from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Icon from "react-native-vector-icons/Ionicons";
-import WorkoutsScreen from "../screens/WorkoutsScreen";
+import HomeScreen from "../screens/HomeScreen";
 import ProfileScreen from "../screens/ProfileScreen";
 import ThemeContext from "../context/ThemeContext";
 import { Text, View } from "react-native";
 import WorkoutScreen from "../screens/WorkoutScreen";
 
 type TabNavigatorParamsList = {
-  WorkoutsScreen: undefined;
+  HomeScreen: undefined;
   ProfileScreen: undefined;
   WorkoutScreen: undefined;
 };
@@ -68,8 +68,8 @@ const TabNavigator = () => {
       }}
     >
       <Tab.Screen
-        name="WorkoutsScreen"
-        component={WorkoutsScreen}
+        name="HomeScreen"
+        component={HomeScreen}
         options={{
           headerShown: false,
 

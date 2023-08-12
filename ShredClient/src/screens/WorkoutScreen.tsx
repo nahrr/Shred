@@ -6,7 +6,7 @@ import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { MainStackParamList } from "../navigation/MainStackNavigator";
 
-const WorkoutScreen = () => {
+const HomeScreen = () => {
   const { theme } = useContext(ThemeContext);
   const navigation = useNavigation<StackNavigationProp<MainStackParamList>>();
 
@@ -63,4 +63,4 @@ const WorkoutScreen = () => {
     </View>
   );
 };
-export default WorkoutScreen;
+export default HomeScreen;

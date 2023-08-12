@@ -6,7 +6,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { StyleSheet } from "react-native";
 import ThemeContext from "../context/ThemeContext";
 import CreateWorkoutScreen from "../screens/CreateWorkoutScreen";
-import WorkoutScreen from "../screens/WorkoutScreen";
+import HomeScreen from "../screens/WorkoutScreen";
 import AddExerciseScreen from "../screens/AddExerciseScreen";
 
 export type MainStackParamList = {
@@ -39,7 +39,7 @@ const MainStackNavigator = () => {
         />
         <Stack.Screen
           name="Workout"
-          component={WorkoutScreen}
+          component={HomeScreen}
           options={{ headerShown: false }}
         />
         <Stack.Screen

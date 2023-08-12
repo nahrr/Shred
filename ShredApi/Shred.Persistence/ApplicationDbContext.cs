@@ -5,6 +5,10 @@ using Shred.Domain.Repositories;
 namespace Shred.Persistence;
 public sealed class ApplicationDbContext : DbContext, IUnitOfWork
 {
+    public ApplicationDbContext()
+    {
+    }
+
     public ApplicationDbContext(DbContextOptions options)
         : base(options)
     {

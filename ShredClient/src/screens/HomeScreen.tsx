@@ -4,7 +4,7 @@ import useWorkouts from "../hooks/useWorkouts";
 import { formatDate } from "../utils/dateFormatter";
 import ThemeContext from "../context/ThemeContext";
 
-const WorkoutsScreen = () => {
+const HomeScreen = () => {
   const { data: workout, isLoading, isError } = useWorkouts();
   const { theme } = useContext(ThemeContext);
 
@@ -86,4 +86,4 @@ const WorkoutsScreen = () => {
   );
 };
 
-export default WorkoutsScreen;
+export default HomeScreen;
